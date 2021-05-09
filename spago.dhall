@@ -1,6 +1,7 @@
 { name = "purescript-webpack-template"
 , dependencies =
-  [ "arrays"
+  [ "affjax"
+  , "arrays"
   , "codec-argonaut"
   , "console"
   , "effect"
@@ -9,6 +10,7 @@
   , "prelude"
   , "profunctor"
   , "psci-support"
+  , "random"
   , "strings"
   , "tuples"
   ]
