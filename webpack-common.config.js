@@ -1,6 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   performance: {
@@ -21,18 +22,13 @@ module.exports = {
       title: "Webpack/Purescript Starter",
       template: "src/index.html",
     }),
-    // new WorkboxPlugin.GenerateSW({ clientsClaim: true, skipWaiting: true }),
+    new MiniCssExtractPlugin()
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        include: __dirname + "/assets/styles",
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader", options: { importLoaders: 1 } },
-          { loader: "postcss-loader" },
-        ],
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },

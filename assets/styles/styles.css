@@ -1,8 +1,6 @@
-/* @tailwind base;
-@tailwind components;
 
-.btn {
-  @apply px-4 py-2 bg-blue-600 text-white rounded;
+#form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-@tailwind utilities; */
